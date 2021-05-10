@@ -1,7 +1,13 @@
-﻿<html>
+﻿<!--  Binary Puzzle - loaded to GitHub -->
+<!--  23/3/2021, Nev Goodyer nothing changed yet -->
+<!--  29/4/2021, Nev, added a link back to the repository -->
+<!--  30/4/2021, Nev, Updated several time times with links to the lates version -->
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
-    <title>Binary Puzzle 6x6</title>
+    <title>Home - Binary Puzzle 6x6</title>
+    <link rel="icon" href="images/techEdIcon.png">
     <script type="text/javascript">
             //  24/7/19 - this will probably just be a home page
     </script>
@@ -16,18 +22,64 @@
     </style>
 </head>
 <body>
-    <!--  HTML consists of links and a series of images of the question  -->
-    <h1>6x6 Binary Puzzle Game</h1>
+    <h1>Binary Puzzle Game (6x6)</h1>
     <h2>Home page</h2>
-    <p>Links to versions below:</p>
-    <p><a href="index-v01.html" target="_blank">V01 </a>- A blank shell ready for some unique, innovative code</p>
-    <p><a href="index-v02.html" target="_blank">V02 </a>- Hard code + CSS</p>
-    <p><a href="index-v03.html" target="_blank">V03 </a>- CSS modified by Rain to have single solid line borders</p>
-    <p><a href="index-v04.html" target="_blank">V04 </a>- 32 lines of "Grunt load" code replaced by loops of 6 columns. 3 test grids loaded - G1, G2 &amp; G3. </p>
-    <p><a href="index-v05.html" target="_blank">V05 </a>- Full re-name of all board text boxes as "B23", which is Board, Column 2, Row 3. Loop code refined to 6 loops of 6 columns</p>
-    <p><a href="index-v06.html" target="_blank">V06 </a>- Load code refined to 2 nested loops and tested for different row and column numbers</p>
-    <p><a href="index-v07.html" target="_blank">V07 </a>- Creation of a 2D array called Grid[] for easy row and column reference&nbsp;</p>
-    <p><a href="index-v08.html" target="_blank">V08 </a>- A good place to start this question. 13 test grids and buttons for each sub, each with a stub message.&nbsp;</p>
-    <p><a href="index-v09.html" target="_blank">V09 </a>- Main "Solve Repeat" coded to do 2 loops.</p>
+    <p>The repository for this site is at: <a href="https://github.com/bwattle/BinaryPuzzle">https://github.com/bwattle/BinaryPuzzle</a> </p>
+    <p>Links to versions and descriptions are below:</p>
+    <p><a href="puz101.html" target="_blank">v1.01 </a>- A blank shell ready for some unique, innovative code</p>
+    <p><a href="puz102.html" target="_blank">v1.02 </a>- changed red tripple lines with single line - 2 lines of css</p>
+    <p><a href="puz103.html" target="_blank">v1.03 </a>- grunt code to load the 6x6 table - page is 150 lines</p>
+    <p><a href="puz104.html" target="_blank">v1.04 </a>- 36 lines of grunt code replaced by 6 loops (only 3 done so far)</p>
+    <p><a href="puz105.html" target="_blank">v1.05 </a> - Gameboard re-labelled and the 6 loops re-labelled accordingly. This is preparation for&nbsp; nesting the column loops inside row loops. These 2 nested loops (about 4&nbsp; lines of code) will replace the original 36 lines of repetative grunt code.&nbsp; &nbsp; &nbsp;&nbsp;</p>
+    <p><a href="puz106.html" target="_blank">v1.06 </a> - 2 nested loops finally replace the 36 lines of grunt code</p>
+    <p><a href="puz107.html" target="_blank">v1.07 </a> - Push temporary row arrays to a 2D array called &quot;Grid&quot;. Added text boxes to view Grid in 1D and 2D form, as well as calling 1 test element.</p>
+    <p><a href="puz108.html" target="_blank">v1.08 </a> - Add a dropdown to select a game and buttons to test the structure chart modules.</p>
+    <p><a href="puz109.html" target="_blank">v1.09 </a> - Create a function to "DisplayGrid" after values have been changed. This will be called from every button. (ERROR: &quot;Grid&quot; array does NOT wipe when loading a new game - see 1D text box to see it getting longer and longer.)</p>
+    <p><a href="puz110.html" target="_blank">v1.10 </a> - ERROR from v1.09 repaired by setting Grid = []; in the &quot;loadGrid&quot; function. This shows the advantage of having test data for quick reference. Also shifted the writing to text boxes from &quot;LoadGrid&quot; to &quot;DisplayGrid&quot;.</p>
+    <p><a href="puz111.html" target="_blank">v1.11 </a> - &quot;RowPairs&quot; module has been converted from the pseudocode below into JavaScript and functions on the button press.</p>
+    <p>&nbsp;</p>
+
+    <div class="TextPurple" id="TPurple">
+        <p>A zip of the Visual Studio solution folder for version 1.05 can be downloaded <a href="assets/Puz-6x6-v105.zip">here</a>.&nbsp;</p>
+        <h2>A zip of the Visual Studio solution folder for version 1.08 can be downloaded <a href="assets/Puz-6x6-v108.zip">here</a>.&nbsp;&nbsp;</h2>
+        <p>The question we are solving is below in images:</p>
+    </div>
+    <p>
+        <img src="images/22_QuestionSetup.png" width="604" height="884" alt="" />
+    <p>&nbsp;</p>
+    <img src="images/22a-2D_arrays.png" width="600" height="134" alt="" />
+    </p>
+    <p>&nbsp;</p>
+    <p>
+        <img src="images/22b-DataTypes.png" width="580" height="44" alt="" />
+    </p>
+    <p>&nbsp;</p>
+    <p>
+        <img src="images/22c-StructureChart.png" width="598" height="552" alt="" />
+    </p>
+    <p>
+        <img src="images/22d-MainAlgorithm.png" width="596" height="210" alt="" />
+    </p>
+    <p>&nbsp;</p>
+    <p>
+        <img src="images/22e-reusableCode.png" width="578" height="76" alt="" />
+    </p>
+    <span class="TextPurple">A desk check is included to assist with what this code is actually doing: </span>
+    <p>
+        <img src="images/22fi-SolveRowPairs-DeskCheck.png" width="978" height="813" alt="" />
+    </p>
+    <p>&nbsp;</p>
+    <p>
+        <img src="images/22fii-Lines6and7.png" width="576" height="40" alt="" />
+    </p>
+    <p>&nbsp;</p>
+    <p>
+        <img src="images/22Gi-writeAlgorithm.png" width="598" height="132" alt="" />
+    </p>
+    <p>
+        <img src="images/22Gii-driverForTesting.png" width="582" height="36" alt="" />
+    </p>
+    <p>&nbsp;</p>
+    <p class="TextPurple">End of Question</p>
 </body>
 </html>
