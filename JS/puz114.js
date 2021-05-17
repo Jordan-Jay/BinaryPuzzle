@@ -63,17 +63,18 @@ function SolvePuzzle() {
 }
 
 function SolveNumberPairs() {
-    window.alert('SolveNumberPairs has not been coded yet');
+    SolveRowPairs();
+    SolveColPairs();
 }
 
 function SolveRowPairs() {
     for (let Row = 0; Row < GridSize; Row++) {
         for (let Col = 0; Col < GridSize - 1; Col++) {
             if (grid[Row][Col] !== null && grid[Row][Col] == grid[Row][Col + 1]) {
-                if (Col > 0) {
+                if (Col > 0) { // Left side
                     grid[Row][Col - 1] = 1 - grid[Row][Col];
                 }
-                if (Col < GridSize - 2) {
+                if (Col < GridSize - 2) { // Right side
                     grid[Row][Col + 2] = 1 - grid[Row][Col];
                 }
             }
@@ -87,10 +88,10 @@ function SolveColPairs() {
     for (let Row = 0; Row < GridSize - 1; Row++) {
         for (let Col = 0; Col < GridSize; Col++) {
             if (grid[Row][Col] !== null && grid[Row][Col] == grid[Row + 1][Col]) {
-                if (Row > 0) {
+                if (Row > 0) { // Above
                     grid[Row - 1][Col] = 1 - grid[Row][Col];
                 }
-                if (Row < GridSize - 2) {
+                if (Row < GridSize - 2) { // Below
                     grid[Row + 2][Col] = 1 - grid[Row][Col];
                 }
             }
@@ -100,6 +101,7 @@ function SolveColPairs() {
 }
 
 function SolveNumberTrios() {
+    // Horizontal
     for (let Row = 0; Row < GridSize; Row++) {
         for (let Col = 0; Col < GridSize - 2; Col++) {
             if (grid[Row][Col] !== null && grid[Row][Col] == grid[Row][Col + 2]) {
@@ -108,6 +110,7 @@ function SolveNumberTrios() {
         }
     }
 
+    // Vertical
     for (let Row = 0; Row < GridSize - 2; Row++) {
         for (let Col = 0; Col < GridSize; Col++) {
             if (grid[Row][Col] !== null && grid[Row][Col] == grid[Row + 2][Col]) {
@@ -115,7 +118,6 @@ function SolveNumberTrios() {
             }
         }
     }
-
     DisplayGrid(grid);
 }
 
